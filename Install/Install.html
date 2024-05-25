@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>FIFA 12</title>
+    <link rel="icon" href="./image/icon.jpg">
+    <link rel="icon" href="./image/fblogo.webp">
+    <link rel="stylesheet" href="Install.css">
+</head>
+
+<body>
+
+
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+        <img src="./image/fifa 12 app.jpg" alt="" class="appImg">
+    </button>
+    <h4 class="appImg">FIFA 12</h4>
+    <div class="loading">
+        <span></span><span></span><span></span><span></span>
+    </div>
+
+    <div id="id01" class="modal">
+
+        <div class="modal-content">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='block'" class="close">
+                    <img src="./image/fifa 12 app.jpg" alt="" class="appIcon">
+                    <h6 style="color: white;">FIFA 12</h6>
+                    <div class="installBox">
+                        <img src="./image/fifa 12 app.jpg" alt="" class="IconApp">
+                        <p class="boldTxt">FIFA 12</p>
+                        <button onclick="refuse()">
+                            <div class="cancel">Cancel</div>
+                        </button>
+                        <p class="stick">|</p>
+                        <button id="install">
+                            <div class="install"> Install</div>
+                        </button>
+
+                    </div>
+
+
+
+                </span>
+
+
+            </div>
+        </div>
+
+
+</body>
+<script src="./Install.js"></script>
+
+</html>

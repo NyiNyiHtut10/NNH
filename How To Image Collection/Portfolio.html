@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  height: 40vh;
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- MAIN (Center website) -->
+<div class="main">
+
+<h1>FIFA.COM</h1>
+<hr>
+
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column">
+    <div class="content">
+      <img src="./image/campNou.avif" alt="Mountains" style="width:100%; height: 20vh;">
+      <h3>Camp Nou Stadium</h3>
+      <p>FC Barcelona</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+    <img src="./image/barnabeau.webp" alt="Lights" style="width:100%; height: 20vh;">
+      <h3>Santiago Bernabeu </h3>
+      <p>Real Madrid CF</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+    <img src="./image/anfield.webp" alt="Nature" style="width:100%; height: 20vh;">
+      <h3>Anfield Stadium</h3>
+      <p>Liverpool CF</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+    <img src="./image/old traffod.webp" alt="Mountains" style="width:100%; height: 20vh;">
+      <h3>Old Trafford Stadium</h3>
+      <p>Manchester United</p>
+    </div>
+  </div>
+<!-- END GRID -->
+</div>
+
+<div class="content">
+  <img src="./image/emirates.jpg" alt="Bear" style="width:100%;">
+  <h3>Arsenal FC</h3>
+  <p>Emirates Stadium</p>
+</div>
+
+<!-- END MAIN -->
+</div>
+
+</body>
+</html>
