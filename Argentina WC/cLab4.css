@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image:linear-gradient(to right,white,skyblue,rgb(104, 104, 173));
+    height: 100vh;
+    
+  }
+
+  .header h5{
+    display: inline-block;
+    margin-top:30px;
+    font-size: 50px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: cadetblue;
+    text-shadow: 2px 2px 10px red;
+  
+  }
+  .header h5:hover {
+    text-shadow: 2px 2px 10px rgb(0, 247, 255);
+  }
+  
+  .container {
+    position: relative;
+    width: 50%;
+    height: 500px;
+    background: #222;
+    border-radius: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+  
+  .clip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+  }
+  
+  .clip1 {
+    background: url("./image/copa\ america.jpg");
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 46% 0, 39% 100%, 0 100%);
+  }
+  
+  .clip2 {
+    background: url("./image/Argentina-win-the-world-cup-2022-696x442.jpg");
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(19% 0, 87% 0, 64% 100%, 33% 100%);
+  }
+  
+  .clip3 {
+    background: url("./image/finalissima.jpg");
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(82% 0, 100% 0, 100% 100%, 63% 100%);
+  }
+  
+  .container:hover .clip {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    box-shadow:5px 5px 20px white;
+  }
+  
+  .container .clip:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    box-shadow:5px 5px 10px white;
+  
+  }
