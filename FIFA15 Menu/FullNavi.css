@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+  }
+  /* Menu Start */
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    background-image:linear-gradient(to right,rgb(39, 39, 129),rgb(79, 133, 235));
+    clip-path: circle(20px at calc(100vw - 5vw) 31px);
+    transition: clip-path 0.5s;
+  }
+  
+  .menu li {
+    position: relative;
+    z-index: 5;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: rgb(224, 214, 214);
+    background-color: #333;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 5px;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    width: 120px;
+    padding: 5px;
+  }
+  
+  .btn {
+    position: absolute;
+    top: 20px;
+    left: calc(100vw - 5vw);
+    transform: translateX(-50%);
+    cursor: pointer;
+  }
+  
+  .btn > span {
+    width: 3px;
+    height: 3px;
+    display: block;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-bottom: 1px;
+  }
+  
+  .highlight {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    transition: transform 0.3s;
+  }
+  /* Menu End */
+  
+  /* Image Container Start */
+  .image-container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: burlywood;
+  }
+  
+  .img {
+    width: 450px;
+    height: 250px;
+    margin: 20px;
+    border-radius: 20px;
+  }
+  
+  .img-one {
+    background-image: url("./image/fifa-15-ultimate-team-mobile-header.jpg.adapt.crop16x9.575p.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 4px 3px 5px rgb(100, 50, 50);
+  }
+  
+  .img-two {
+    background-image: url("./image/imagen-de-la-portada-de-fifa-15--ea-sports.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 4px 3px 5px rgb(100, 50, 50);
+  }
+  /* Image Container End */
+  
+  /* Headings Start */
+  .container {
+    padding: 0 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: burlywood;
+  }
+  
+  article {
+    padding: 20px 0;
+  }
+  
+  article > h2 {
+    text-transform: uppercase;
+    font-size: 4rem;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:rgb(190, 84, 13);
+    font-weight: bolder;
+  }
+  
+  .para {
+    max-width: 700px;
+    color: rgb(79, 77, 77);
+    padding: 10px;
+    text-align: center;
+    line-height: 22px;
+  }
+  
+  /* Headings End */

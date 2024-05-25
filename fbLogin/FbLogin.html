@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Facebook</title>
+        <link rel="icon" href="./image/fblogo.webp">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Full-width input fields */
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Set a style for all buttons */
+        button {
+            background-color:transparent;
+            color: white;
+            padding: 0px 0px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            display: block;
+            margin: auto;
+            margin-top: 200px;
+            position: relative;
+        }
+         .animate{
+            font-size: 40px;
+            color: blue;
+            text-align: center;
+            position: relative;
+            animation: move 1s infinite;
+        }
+        @keyframes move{
+            0%{
+                scale: 0.9;
+            }50%{
+                scale: 1.2;
+            }
+            100%{
+                scale: 0.9;
+            }
+        }
+        .loading{
+            position: absolute;
+            left: 47%;
+            top: 48%;
+        }
+        @media  screen and (max-width:992px) {
+            .loading{
+                left: 41%;
+            }
+        }
+        .loading span{
+            width: 10px;
+            height: 10px;
+            margin:0px 4px;
+            background-color: rgba(110, 108, 231, 0.5);
+            border-radius: 50%;
+            box-shadow: 0px 0px 5px rgb(184, 183, 183);
+            display: inline-block;
+            animation: jump 1.4s linear infinite;
+        }
+        @keyframes jump {
+            0%,100%{
+                transform: scale(0.5);
+
+            }
+            50%{
+                transform: scale(0.9);
+            }
+            
+        }
+        span:nth-child(1){
+            animation-delay: 0.4s;
+        }
+        span:nth-child(2){
+            animation-delay: 0.8s;
+        }
+        span:nth-child(3){
+            animation-delay: 1.2s;
+        }
+        span:nth-child(4){
+            animation-delay: 1.6s;
+        }
+
+
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        /* Center the image and position the close button */
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            box-shadow: 0px 0px 5px rgb(72, 66, 66);
+            padding: 3px;
+
+        }
+        .logo{
+            margin: auto;
+            display: block;
+            font-size:20px;margin-bottom: 10px;
+        }
+        .logIn{
+            position: absolute;
+            top: 220px;
+            align-items: center;
+            margin: auto;
+            display: block;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 10px;
+            left: 20px;
+            text-align: center;
+        }
+        .logIn:hover{
+            background-color: rgb(11, 11, 20);
+        }
+
+        .logIn1{
+            position: absolute;
+            top: 270px;
+            align-items: center;
+            margin: auto;
+            display: block;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 10px;
+            left: 20px;
+            text-align: center;
+
+        }
+        .logIn2{
+            position: absolute;
+            top: 400px;
+            align-items: center;
+            margin: auto;
+            display: block;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 10px;
+            left: 20px;
+            text-align: center;
+
+        }
+        .blue{
+            position: absolute;
+            top: 187px;
+            left: 268px;
+
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 0% auto 15% auto;
+            /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 350px;
+            height: 95vh;
+            border-radius: 10px;
+            /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button (x) */
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: rgb(73, 70, 70);
+            cursor: pointer;
+        }
+
+        /* Add Zoom Animation */
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+
+        @-webkit-keyframes animatezoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes animatezoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+        .markTxt{
+            display: inline-block;
+            position: absolute;
+            top: 450px;
+            font-size: 16px;
+            font-family:'Times New Roman', Times, serif;
+            color: #8683eb;
+        }
+        .markImg{
+            position: absolute;
+            display: inline-block;
+            top: 450px;
+            left: 129px;
+            width: 10%;
+        }
+        .mark{
+            display: block;
+            margin: auto;
+        }
+
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><i class="animate fa-brands fa-square-facebook"></i></button>
+    <div class="loading">
+        <span></span><span></span><span></span><span></span>
+    </div>
+
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                    title="Close Modal"><i style="font-size: 20px;" class="fa-solid fa-gear"></i></span>
+                    <i class="logo fa-brands fa-square-facebook"></i>
+                <img src="./image/FB_IMG_1715912445585.jpg" alt="Avatar" class="avatar">
+                <h6 style="color: #000; font-size: 20px; margin-top: -1px;">Cristiano Ronaldo</h6>
+                <img src="./image/blueMark.png" alt="" class="blue" style="width: 5%;">
+                <button style="width: 90%; background: blue; color: white; border-radius: 20px" class="logIn">Log in</button>
+                <button style="width: 90%; border: 1px solid black; color: rgb(8, 8, 8); border-radius: 20px" class="logIn1">Log in to another account</button>
+                <button style="width: 90%; border: 1px solid rgb(57, 105, 217); color: rgb(92, 117, 242); border-radius: 20px" class="logIn2">Create new account</button>
+                <div class="mark"><img class="markImg" src="./image/Picsart_24-05-17_03-46-08-260.png" style="width: 10%;"><span class="markTxt">Meta</span></div>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
