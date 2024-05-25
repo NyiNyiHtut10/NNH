@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    body {
+        background: linear-gradient(to right,rgb(85, 187, 242),white,rgb(97, 193, 220));
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    #inputBox {
+        width: 500px;
+    
+        padding: 10px;
+        justify-content: center;
+           border: 2px solid black;
+           border-radius: 20px;
+    }
+    .btn {
+       padding: 10px;
+       width: 100px;
+      border: 2px solid black;
+      text-align: center;
+    }
+    .btn:hover {
+        background-color: rgb(246, 166, 91);
+        color: rgb(248, 253, 253);
+    }
+</style>
+
+<body>
+    <input type="text" id="inputBox">
+    <button class="btn" onclick="addItem()"> Add Item</button>
+     <ul id="list"></ul>
+
+</body>
+<script>
+   let input= document.getElementById('inputBox');
+   let list=document.getElementById('list');
+   function addItem(){
+   let li= document.createElement('li');  //<li> </li>
+   let text=document.createTextNode('Messi');
+   li.innerHTML=input.value;
+    //<li> User value </li> 
+
+     list.style.border= '2px solid black';
+     list.style.padding='10px';
+     list.style.backgroundColor="pale";
+     list.style.width= '500px';
+     list.style.listStyleType='none';
+     list.style.margin='auto';
+     li.style.border='0.7px solid black';
+     li.style.margin='5px';
+     li.style.backgroundColor='white';
+     li.style.padding='10px';
+//    list.appendChild(li);  //oreder from upwards
+  list.prepend(li); //order from downwards
+//   li.prepend(text);
+//   document.getElementById('list').prepend(li)
+     input.value="";
+
+   }
+</script>
+
+</html>

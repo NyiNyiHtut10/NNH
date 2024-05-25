@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        font-size: larger;
+        background: rgb(83, 205, 253);
+    }
+    #number{
+        border: 2px inset rgb(240, 137, 72);
+        background: rgb(40, 41, 42);
+        color: rgb(243, 186, 186);
+        width: 40px;
+        display: block;
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 10px;
+        font-size: 30px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+    }
+    button{
+        padding: 20px;
+        background: linear-gradient(rgb(214, 188, 188),white);
+        margin: 10px;
+        animation: zoom 0.7s linear infinite;
+
+    }
+    @keyframes zoom {
+        0%{
+            transform: scale(1);
+        }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
+        
+    }
+</style>
+<body>
+    <h1 id="number"></h1>
+    <button onclick="add()">Add</button>
+    <button onclick="reduce()">Reduce</button>
+    <button onclick="reset()">Reset</button>
+    
+</body>
+<script>
+    let number=document.getElementById('number');
+    let counterValue=0;
+    number.innerHTML=0;
+    function updateCounter() {
+        number.innerHTML=counterValue;
+        
+    }
+    function add() {
+        counterValue++;
+        updateCounter();
+        
+    }
+    function reduce() {
+        counterValue--;
+        updateCounter();
+        
+    }
+    function reset() {
+        counterValue=0;
+        updateCounter();
+    }
+
+</script>
+</html>

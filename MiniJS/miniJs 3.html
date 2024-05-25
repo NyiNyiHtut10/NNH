@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            body{
+                text-align: center;
+                
+            }
+            button {
+                position: relative;
+                 float: right; 
+                font-size: 30px;
+                cursor: pointer;
+            }
+            #list {
+                position: absolute;
+                top: 0;
+                right: 80px;
+                opacity: 0;
+                text-decoration: none;
+                list-style-type: none;
+                
+            }
+            #list a {
+                display: block;
+                width: 100px;
+                border-radius: 10px;
+                list-style-type: none;
+                color: black;
+                background:linear-gradient(rgb(142, 142, 188),white,skyblue);
+                height: 30px;
+                margin:10px 0px ;
+                text-decoration: none;
+                padding: 10px;
+            }
+        </style>
+</head>
+
+<body>
+    <button id="button"><i class="fa-solid fa-bars"></i></button>
+    <ul id="list">
+        <li>
+            <a href="">Home</a>
+            <a href="">Contact</a>
+            <a href="">About</a>
+        </li>
+    </ul>
+</body>
+<script>
+    let button=document.getElementById('button');
+    let list=document.getElementById('list');
+    let notActive=false;
+    button.addEventListener('click',function () {
+        notActive=!notActive;
+        if(!notActive==true){
+            
+            button.innerHTML='<i class="fa-solid fa-xmark"></i>';
+            list.style.opacity='1';
+        } else {
+            button.innerHTML='<i class="fa-solid fa-bars"></i>';
+            list.style.opacity='0';
+        }
+    })
+</script>
+</html>

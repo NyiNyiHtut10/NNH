@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+}
+.trackImage:hover {
+    box-shadow: 4px 4px 10px rgb(119, 119, 202);
+
+}
+/* container */
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* about Song */
+.songDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.trackImage {
+    background-image: url("");
+    width: 350px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin: 0px 25px 25px;
+}
+.trackImage:hover{
+    cursor: pointer;
+}
+.trackName {
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 2px 2px 15px rgb(250, 196, 196);
+}
+.trackArtist {
+    font-size: 25px;
+    margin: 20px 0px 10px 0px;
+    font-family: cursive;
+    text-shadow: 2px 2px 8px rgb(221, 190, 190);
+}
+/* about Button */
+.button {
+    display: flex;
+    align-items: center;
+}
+.previousBtn,.playpauseBtn,.nextBtn {
+    padding: 20px;
+    opacity:1;
+    transition: 0.5s;
+}
+.previousBtn:hover,.playpauseBtn:hover,.nextBtn:hover {
+    transform: scale(0.95);
+    opacity:0.7;
+}
+i {
+    cursor:grab;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 5px rgb(235, 155, 155);
+}
+/* about Time */
+.timeDiv {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px 0px 0px;
+}
+.currentDisplay,.totalDisplay {
+    font-size: 18px;
+    text-shadow: 1px 2px 5px rgb(204, 174, 174);
+    font-weight:bold;
+}
+ .totalTimeLength {
+    width: 40%;
+    height: 3px;
+    background-color: rgb(78, 27, 27);
+    margin: 0px 20px;
+}
+.currentTime {
+    height: 3px;
+    width: 0px;
+    background-color: rgb(211, 162, 127);
+} 
+.hidden {
+  display: none;
+}
+

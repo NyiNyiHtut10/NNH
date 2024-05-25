@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+<style>
+   body {
+    
+    text-align: center;
+    margin: 200px;
+    background: linear-gradient(to right,rgb(101, 128, 181),rgb(218, 161, 161));
+   }
+   #clock {
+   font-size: 30px;
+   background: linear-gradient(to right,rgb(136, 136, 188),white,rgb(117, 163, 179)) ;
+   padding: 20px;
+   width: 300px;
+   border: 10px inset black;
+   }
+</style>
+<body>
+    <span id="clock"></span>
+</body>
+<script>
+
+
+   const Digitalclock=()=>{
+
+    let date =new Date();
+    let hour=date.getHours();
+    let minute=date.getMinutes();
+    let second=date.getSeconds();
+    let milliSecond=date.getMilliseconds();
+
+
+     hour=hour<=12? hour:hour-12;
+     hour=hour<10? '0'+hour : hour;
+     minute=minute<10? '0'+minute:minute;
+     second=second<10? '0'+second:second;
+     let clock=document.getElementById('clock');
+        clock.innerHTML= hour +":" +minute +":" +second;
+
+
+   }
+   Digitalclock();
+   //to be sucessively Update 
+   //setInterval(functionName, limited time)
+   setInterval(Digitalclock,1000); //Funtion work every 1000millisecond = 1 s
+</script>
+</html>

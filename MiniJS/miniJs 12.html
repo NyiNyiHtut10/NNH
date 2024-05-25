@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password</title>
+</head>
+<style>
+    body {
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(orange,red,skyblue);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    span {
+        background:linear-gradient(rgb(108, 188, 235),red) ;
+        color: rgb(255, 255, 255);
+       width: 40px;
+       height: 40px;
+       margin: 10px;
+       display: inline-block;
+       text-align: center;
+       justify-content: center;
+       align-items: center;
+       padding: 10px;
+       font-size: 25px;
+       font-weight: bolder;
+       animation: animate 2s linear infinite;
+       border-radius: 10px;
+    
+    }
+    @keyframes animate {
+        0% {
+            transform: rotateZ(0deg);
+        }
+        25% {
+            transform: rotateZ(20deg);
+        }
+        50% {
+            transform: rotateZ(-20deg);
+        }
+        100%{
+            transform: rotateZ(0deg);
+        }
+        
+    }
+    #input {
+        border: 2px solid orange;
+        background: linear-gradient(to right,skyblue,white);
+        padding: 10px;
+    }
+</style>
+<body>
+    <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span>
+    <br><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><br><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span>
+    <br><br><br><br>
+  <form action="" method="post">
+    <label for="" style="color: rgb(202, 174, 137); font-size: 20px;">Your password may be:</label>
+    <input type="text" placeholder="*****" id="input">
+    <input type="submit" value="Submit">
+  </form> 
+<script>
+      let box=document.getElementById('input');
+    function password() {
+        let words='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+    let code='';
+    for (let index = 0; index < 8; index++) {
+      let randomNumber=  Math.floor(Math.random()*words.length); //array index calculation
+      code += words[randomNumber];//put into array
+    }
+
+        return code;
+    }
+ let result= password();
+ box.value=result;
+</script>
+</html>

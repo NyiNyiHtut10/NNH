@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculation</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(to right,rgb(155, 155, 239),skyblue,white,rgb(107, 107, 143));
+    }
+</style>
+<body>
+    <div class="card">
+       <form action="" id="form">
+        <label for="birthdate" style="font-family: cursive;">Please choose birth date:</label>
+        <input type="date" id="birthdate" style="padding: 10px;">
+        <button type="submit" style="background-color: cadetblue; color: aqua; border: 2px inset black;">Calculate</button>
+        
+       </form>
+       <h2 id="result"></h2>
+    </div>
+    
+</body>
+<script>
+   let form= document.getElementById('form');
+   let result=document.getElementById('result');
+   form.addEventListener('submit',(event)=>{
+     event.preventDefault(); //prevent default behavior //prevent sending information
+     let birthDate=new Date(document.getElementById('birthdate').value)
+     let today=new Date();
+
+     //Birthdate Calculate
+     let month=today.getMonth()-birthDate.getMonth();
+     let age=today.getFullYear() - birthDate.getFullYear();
+     if (month<0) {
+        age -- ;
+        month += 12;
+    } 
+    let resultMsg='';
+
+    //error fixing
+    if (age == 0) {
+        resultMsg=month +' months old';
+    } else if(age<0) {
+        resultMsg='This child was not born yet.';
+    }else {
+        resultMsg=age +' years & '+month+' months old';
+    }
+    result.innerHTML=resultMsg;
+    result.style.border='2px inset black';
+    result.style.backgroundColor='burlywood';
+    result.style.width='300px';
+    result.style.boxShadow='0px 0px 5px orange'
+    result.style.textAlign='center';
+    result.style.fontSize='20px';
+   })
+    
+</script>
+</html>

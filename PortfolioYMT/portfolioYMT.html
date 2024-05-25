@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Portfolio</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color:rgb(243, 149, 82);
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        /*auto card fill*/
+    }
+
+    .card {
+        border-radius: 20px;
+        width: 340px;
+        height: 280px;
+        background: linear-gradient(to right, skyblue, white, skyblue);
+        border: 2px inset rgb(112, 141, 236);
+        margin: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .hTwo {
+        color: rgb(86, 35, 35);
+        text-shadow: 0px 0px 5px rgb(236, 227, 227);
+        font-family: cursive;
+        position: absolute;
+        top: 10px;
+        left: 120px;
+
+    }
+    .image{
+        width: 80%;
+        height: 24vh;
+        position: absolute;
+        left:40px ;
+        box-shadow: 0px 0px 5px black;
+    }
+    .button{
+        position: absolute;
+        bottom: 20px;
+        padding: 10px;
+        background: rgb(227, 146, 41);
+        color: aqua;
+        box-shadow: 0px 7px rgb(182, 180, 180);
+        animation: button 0.8s linear infinite;
+        
+    }
+    @keyframes button {
+        0%,100%{
+            scale: 1;
+        }
+        50%{
+            scale: 0.8;
+        }
+        
+    }
+    .button:active{
+        padding: 5px;
+        box-shadow: 0px 1px rgb(182, 180, 180);
+    }
+    .a{
+        text-decoration: none;
+        color: white;
+    }
+    .a:hover{
+        cursor: pointer;
+
+    }
+    
+</style>
+
+<body>
+    <div class="container"></div>
+</body>
+<script>
+    const cards = [
+        { title: "FIFA 15" , image:"./image/f1.jpg" ,buttonTxt:'PLAY',path:"https://www.ea.com/en-gb/games/fifa"},
+        { title: "FIFA 16" ,image:"./image/f4.jpg",buttonTxt:'PLAY',path:"https://www.ea.com/en-gb/games/fifa"},
+        { title: "PES 2017",image:"./image/p1.jpg",buttonTxt:'PLAY',path:"https://www.ea.com/en-gb/games/fifa" },
+        { title: "FIFA 15",image:"./image/f2.jpg" ,buttonTxt:'PLAY',path:"https://www.ea.com/en-gb/games/fifa"},
+        { title: "FIFA 16",image:"./image/f5.jpg_large" ,buttonTxt:'PLAY',path:"https://www.ea.com/en-gb/games/fifa"},
+
+        { title: "PES 2017",image:"./image/p2.jpg",buttonTxt:'PLAY',path:"https://www.ea.com/en-gb/games/fifa" },
+        { title: "FIFA 15" ,image:"./image/f3.jpg",buttonTxt:'PLAY',path:"https://www.ea.com/en-gb/games/fifa"},
+        { title: "FIFA 16" ,image:"./image/f10.webp",buttonTxt:'PLAY',path:"https://www.ea.com/en-gb/games/fifa"},
+
+
+        { title: "PES 2017",image:"./image/p3.jpg",buttonTxt:'PLAY',path:"https://www.ea.com/en-gb/games/fifa" }
+
+
+
+    ]
+    let container = document.querySelector('.container');
+    function displayCard() {
+        cards.forEach(index => {
+            let div = document.createElement('div'); //<div></div>
+            let hTwo = document.createElement('h2'); //<h2></h2>
+            let image=document.createElement('img');
+            let button=document.createElement('button');
+            let link=document.createElement('a');
+
+            //add Class
+            div.classList.add('card');//<div class =card></div>
+            hTwo.classList.add('hTwo'); //<h2 class="hTwo"></h2>
+            image.classList.add('image');
+            button.classList.add('button');
+            link.classList.add('a');
+
+           
+
+            //add into HTML
+            hTwo.innerHTML = index.title;
+            image.src=index.image;
+            link.innerHTML= index.buttonTxt;
+            link.href=index.path;
+
+            container.appendChild(div); //    <div class="container"> <div class=card>  <h2> cards.title </h2> </div> </div>
+
+            div.appendChild(hTwo); //no open close in appendChild  >  <div class=card>  <h2> cards.title </h2> </div>  
+            div.appendChild(image);
+            div.appendChild(button);
+            button.appendChild(link);
+            
+
+
+
+        })
+
+
+    }
+    displayCard();
+</script>
+
+</html>
+
+<!--
+    
+-->

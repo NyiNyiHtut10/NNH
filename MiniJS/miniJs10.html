@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pound to KG</title>
+</head>
+
+<body>
+    <div class="container"
+        style="margin-left: 10px; font-size: 20px; ">
+        <div class="kg" style="margin-bottom: 10px;">
+            <label for="kg">Kilogram:</label>
+            <input type="number" id="kgInput" style="width: 200px; padding: 10px;">
+        </div>
+        <div class="lb">
+            <label for="lb">Pound(lb):</label>
+            <input type="number" id="lbInput" style="width: 200px; padding: 10px;">
+        </div>
+    </div>
+</body>
+<script>
+    let kgInput=document.getElementById('kgInput');
+    let lbInput=document.getElementById('lbInput');
+    function convertKg() {
+     lbInput.value=(kgInput.value * 2.2).toFixed(3);//toFixed(float place)
+        
+    }
+    function convertLb() {
+        kgInput.value=(lbInput.value/2.2).toFixed(3);
+        
+    }
+    kgInput.addEventListener('input',convertKg);
+    lbInput.addEventListener('input',convertLb);
+    //for window
+    window.addEventListener('load',convertKg);
+    window.addEventListener('load',convertLb);
+
+</script>
+
+</html>

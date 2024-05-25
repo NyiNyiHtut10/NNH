@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you love me??</title>
+    <link rel="stylesheet" href="NoRefuse.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h2 class="question">Do You Love Me??</h2>
+        <div class="btn-group">
+            <button class="yes">
+                <img src="./image/accept.jpg" alt="" class="accept">
+            </button>
+            <button class="nope"><img src="./image/refuse.jpg" alt="" class="reject"></button>
+        </div>
+    </div>
+    
+</body>
+<script>
+    let wrapper=document.querySelector('.wrapper');
+    let question=document.querySelector('.question');
+    let yesBtn=document.querySelector('.yes');
+    let noBtn=document.querySelector('.nope');
+    let wrapperRect=wrapper.getBoundingClientRect();
+    let noBtnRect=noBtn.getBoundingClientRect();
+    yesBtn.addEventListener('click',function(){
+        question.innerHTML="I love you too!!";
+        question.style.color='pink';
+        question.textShadow='0px 0px 5px black'
+
+    });
+    noBtn.addEventListener('mouseover',function(){
+        const i =Math.floor(Math.random()*
+    (wrapperRect.width-noBtnRect.width))+1;
+    const j=Math.floor(Math.random()*
+    (wrapperRect.height-noBtnRect.height))+1;
+    noBtn.style.left=i + 'px';
+    noBtn.style.top=j+'px';
+    })
+</script>
+</html>

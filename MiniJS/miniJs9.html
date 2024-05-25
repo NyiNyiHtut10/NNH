@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Icon Change</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+</head>
+<style>
+    button {
+        border-style: none;
+        background-color: rgb(196, 196, 244);
+        color: white;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <a href="https://www.facebook.com">
+    <i class="fa-brands fa-facebook" style="margin:10px; font-size: 100px; color: rgb(117, 117, 241);"></i></a>
+    <button onclick="change()" style="padding: 20px;"><span id="buttonTxt"> Messenger</span></button>
+   
+</body>
+<script>
+    let icon=document.querySelector('i');
+    let buttonTxt= document.getElementById('buttonTxt');
+    icon.style.color="blue";
+    let notClick=false;
+    function change() {
+        if (!notClick==true) {
+            icon.classList.remove('fa-facebook');
+            icon.classList.add("fa-facebook-messenger");
+            buttonTxt.innerHTML='Facebook';
+            
+        }
+        else{
+           
+            icon.classList.remove('fa-facebook-messenger');
+            icon.classList.add('fa-facebook');
+            buttonTxt.innerHTML='Messenger'
+        }
+        notClick=!notClick;
+    }
+</script>
+
+</html>

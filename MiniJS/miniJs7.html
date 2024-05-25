@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+</head>
+<style>
+    body{
+        width: 100%;
+        text-align: center;
+    }
+    #body{
+        text-align: center;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        font-size: 30px;
+        display: block;
+        width: 400px;
+        padding: 20px;
+        background: linear-gradient(to right,rgb(168, 168, 208),white,rgb(128, 128, 206));
+    }
+    #stop,#btn {
+        padding: 20px;
+        border-radius: 10px;
+        font-weight: bold;
+
+    }
+
+</style>
+
+<body>
+    <p id="body"></p>
+    <button onclick="stopTime()" id="stop">Stop Time</button>
+    <button id="btn">Resume</button>
+
+    
+</body>
+<script>
+    let body=document.getElementById('body');
+    let btn=document.getElementById('btn');
+    const myInterval=setInterval(myTimer,1000);
+
+ function myTimer() {
+        let today=new Date();
+
+        body.innerHTML=today.toLocaleTimeString();
+        
+    }
+ btn.addEventListener('click', function resumeTime(){
+    let today=new Date();
+
+body.innerHTML=today.toLocaleTimeString();
+
+ const newInterval=setInterval(resumeTime,1000);
+
+
+ })
+    function stopTime() {
+        clearInterval(myInterval);        
+    }
+
+</script>
+</html>
