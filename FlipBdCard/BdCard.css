@@ -1,0 +1,132 @@
+*{
+    padding: 0%;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(116, 192, 243);
+}
+.card{
+    width: 640px;
+    height: 400px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    perspective: 1200px;
+    transition: 0.8s;
+}
+.card:hover {
+    transform: rotateZ(-5deg);
+}
+.card:hover .outside{
+    transform: rotateY(-130deg);
+}
+.outside, .inside {
+    border: 1px solid black;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+        left: 50.1%;
+
+}
+.inside {
+    background: linear-gradient(to left,#e0e0e0,#ffffff 30%);
+
+    
+}
+.outside{
+transform-style: preserve-3d;
+z-index: 1;
+transform-origin: left;
+transition: 2s;
+}
+
+
+.front,.back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateX(0 deg);
+}   
+.front {
+    background-color: aqua;
+}
+.back {
+    transform: rotateY(180deg);
+    background: linear-gradient(to left,#e0e0e0,#ffffff 30%);
+}
+.gif {
+    width: 60%;
+    position: absolute;
+    top: 150px;
+    left: 60px;
+
+}
+p {
+    color: violet;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    animation: run 2s linear infinite;
+}
+@keyframes run {
+    0% {
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    0%{
+        opacity: 0;
+    }
+}
+span{
+    position: absolute;
+    font-size: 20px;
+    top: 90px;
+    left: 80px;
+    font-family: cursive;
+    font-weight: 600;
+    color: rgb(99, 75, 43);
+    animation: jump 0.8s linear infinite;
+
+}
+@keyframes jump {
+    0%{
+        scale: 0.9;
+        opacity: 0.5;
+    }
+    50% {scale: 1.1;
+    opacity: 1;}
+    100% {
+        scale: 0.9;
+        opacity:0.5;
+    }
+}
+ .wish{
+    color: rgb(80, 73, 73);
+    position: absolute;
+    top: 50px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 28px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+.image {
+    width: 60%;
+    height: 30vh;
+    position: absolute;
+    top: 180px;
+    left: 60px;
+    border: 5px inset pink;
+    box-shadow: 5px 5px 10px pink;
+
+}
