@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Netflix.css">
+    <link rel="icon" href="./image/netflix logo.jpg" style="width: 50%;">
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <a href="#" class="logo"><img src="./image/logo.png" alt=""></a>
+        <ul class="navigation">
+            <li><a href="https://www.netflix.com/mm/">Home</a></li>
+            <li><a href="https://www.netflix.com/mm/browse/genre/871925">TV shows</a></li>
+            <li><a href="https://www.netflix.com/mm/title/70293702">Movies</a></li>
+            <li><a href="https://www.netflix.com/mm/title/81055822">Latest</a></li>
+            <li><a href="https://www.netflix.com/signup/creditoption">Sign in</a></li>
+        </ul>
+        <div class="search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search">
+        </div>
+    </header>
+
+    <!-- banner -->
+    <div class="banner">
+        <img src="./image/spider bg.webp" alt="" class="bg">
+
+        <!-- content -->
+        <div class="content">
+            <img src="./image/text logo.webp" alt="" class="movieTitle">
+            <h4>
+                <span>2021</span>
+                <span><i>13+</i></span>
+                <span>2h 28min</span>
+                <span>Action</span>
+
+
+            </h4>
+            <p>
+                From Marvel Studios: With his identity revealed, Peter Parker asks Doctor Strange for help. But when a
+                spell goes wrong, Peter is forced to discover what it truly means to be Spider-Man. <br><br><br>
+                <b> Starring:Tom Holland, Zendaya, Samuel L. Jackson</b>
+            </p>
+            <div class="button">
+                <a href="#"><i class="fa-solid fa-play"></i>Play</a>
+                <a href="#"><i class="fa-solid fa-plus"></i>My List</a>
+            </div>
+        </div>
+
+        <!-- trailer -->
+        <div class="play" onclick="toggleVideo()"><img src="./image/play.png" alt="">Watch Trailer</div>
+    </div>
+
+    <div class="trailer">
+        <video src="./image/SPIDER-MAN- NO WAY HOME - Official Trailer (HD)_Full-HD.mp4" controls="'true"></video>
+        <img src="./image/close.png" alt="" class="close" onclick="toggleVideo()">
+    </div>
+
+</body>
+<script>
+    const trailer = document.querySelector('.trailer');
+
+    function toggleVideo() {
+        const trailer = document.querySelector('.trailer');
+        const video = document.querySelector('video')
+        trailer.classList.toggle('show')
+        video.currentTime = 0;
+        video.pause();
+
+    }
+
+</script>
+
+</html>
